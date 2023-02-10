@@ -28,7 +28,13 @@ if uploaded_file is not None:
     
     st.subheader("EXPONENTIAL MODEL")
    
-    st.write("Sales Forecast: ", newdata_pred)
+    st.write("SALES FORECAST:", newdata_pred)
+    
+    hwe_model_mul_add = ExponentialSmoothing(data["Cement_Demand"][:1329], seasonal = "mul", trend = "add", seasonal_periods = 12).fit()
+    
+    newdata_pred = hwe_model_mul_add.predict(start = data.index[0], end = data.index[-1])
+   
+    st.write("DEMAND FORECAST:")
    
     
     
