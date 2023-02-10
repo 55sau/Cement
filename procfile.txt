@@ -1,1 +1,1 @@
-web:sh setup.sh && streamlit run Cement.ipynb
+web:sh setup.sh && streamlit run cement.py
