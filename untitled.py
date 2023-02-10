@@ -22,7 +22,7 @@ uploaded_file = st.file_uploader(" ", type=['xlsx'])
 if uploaded_file is not None:     
     data = pd.read_excel(uploaded_file)
     data['Date'] =data['Date'].apply(lambda x: x.strftime('%B-%Y'))
-    hwe_model_mul_add_add = ExponentialSmoothing(data["Cement_Sales"][:71], seasonal = "mul", trend = "add", seasonal_periods = 12).fit()
+    hwe_model_mul_add = ExponentialSmoothing(data["Cement_Sales"][:71], seasonal = "mul", trend = "add", seasonal_periods = 12).fit()
     
     newdata_pred = hwe_model_mul_add_add.predict(start = new_data.index[0], end = new_data.index[-1])
     
