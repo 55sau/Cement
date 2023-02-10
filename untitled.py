@@ -9,11 +9,6 @@ Original file is located at
 
 import pandas as pd
 import streamlit as st
-import numpy as np
-import matplotlib.pyplot as plt
-from statsmodels.tsa.seasonal import seasonal_decompose
-from statsmodels.tsa.holtwinters import SimpleExpSmoothing # SES
-from statsmodels.tsa.holtwinters import Holt # Holts Exponential Smoothing
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
 
 st.title('CEMENT SALES AND DEMAND FORECASTING')
@@ -35,6 +30,9 @@ if uploaded_file is not None:
     newdata_pred = hwe_model_mul_add.predict(start = data.index[0], end = data.index[-1])
    
     st.write("DEMAND FORECAST:",newdata_pred)
+    
+    
+    
    
     
     
