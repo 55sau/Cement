@@ -16,7 +16,7 @@ from statsmodels.tsa.holtwinters import SimpleExpSmoothing # SES
 from statsmodels.tsa.holtwinters import Holt # Holts Exponential Smoothing
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
 
-st.title('Forecast of Cement Sales')
+st.title('CEMENT SALES FORECASTING')
 uploaded_file = st.file_uploader(" ", type=['xlsx'])
 
 if uploaded_file is not None:     
@@ -26,10 +26,10 @@ if uploaded_file is not None:
     
     newdata_pred = hwe_model_mul_add.predict(start = data.index[0], end = data.index[-1])
     
-    st.subheader("For exponential model")
+    st.subheader("EXPONENTIAL MODEL")
    
     st.write("Sales Forecast: ", newdata_pred)
    
     
-    st.subheader("Thanks for visit.")
+    
 
